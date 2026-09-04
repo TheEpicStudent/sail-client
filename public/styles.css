@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body {
+    background: #1A1A1A;
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+    overflow-x: hidden;
+}
+.tophead {
+    background-image: linear-gradient(to bottom, #669BBC, #003049);
+    width: 103%;
+    margin: -20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    overflow-x: hidden;
+    padding-bottom: 50px;
+}
+.tophead p {
+    margin-top: -20px;
+    font-size: 20px;
+}
+.logo {
+    align-self: center;
+    width: 80%;
+}
+.logobutton {
+    border-style: solid;
+    border-color:#669BBC;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: white;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.logobutton:hover {
+    background-color: #669BBC;
+    border-color: white;
+    color: white;
+    transition: 0.3s;
+}
+.divider {
+    width: 150%;
+    margin-left: -20px;
+    margin-top: 15px;
+    height: 15px;
+    background: linear-gradient(90deg, #669BBC 0%, #003049 25%, #003049 75%, #669BBC 100%);
+    animation: scroll 10s linear infinite;
+    filter: blur(2px);
+}
+.graddiv {
+    width: 150%;
+    margin-left: -20px;
+    margin-top: -5px;
+    height: 20px;
+    background: linear-gradient(90deg, #669BBC 0%, #003049 25%, #003049 75%, #669BBC 100%);
+    animation: scroll 10s linear infinite
+}
+.graddiv2 {
+    width: 150%;
+    margin-left: -20px;
+    margin-top: -20px;
+    height: 20px;
+    background: linear-gradient(to bottom, transparent, #1A1A1A)
+}
+.content {
+    margin-top: 50px;
+    text-align: center;
+}
+.content h1 {
+    margin-bottom: 20px;
+}
+.content p {
+    justify-self: center;
+    max-width: 500px;
+}
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+}
+.course-card {
+    position: relative;
+    width: 275px;
+    height: 126.5px;
+    border-radius: 15px;
+    background: #ffffffa7;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 20px;
+}
+
+.course-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5.5px;
+    background: #669BBC;
+    z-index: 2;
+}
+.course-card__image {
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 100%;
+    background: url('images/checker.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: soft-light;
+    border-radius: 15px 15px 0 0;
+}
+.course-card__fore {
+    position: absolute;
+    inset: 55px 0 auto 0;
+    height: 72px;
+    background: #ffffff73;
+    border-radius: 0 0 15px 15px;
+}
+.course-card__meta {
+    position: absolute;
+    left: 10px;
+    top: 63.8px;
+    right: 10px;
+}
+
+.course-card__title {
+    margin: 0;
+    color: #000000;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.course-card__subtitle {
+    margin: 2px 0 0;
+    color: #000;
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+}
+.courses {
+    max-height: 80%;
+    min-height: 115px;
+    width: 650px;
+    background-color: #00000053;
+    border-radius: 15px;
+    padding: 15px;
+    justify-content: center;
+    align-content: start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position:absolute;
+}
+.courseinfo {
+    max-height: 80%;
+    min-height: 115px;
+    width: 650px;
+    background-color: #00000053;
+    border-radius: 15px;
+    padding: 15px;
+    justify-content: center;
+    align-content: start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position:absolute;
+}
+.courseinfo__card {
+    width: 310px;
+    height: 103px;
+    text-align: center;
+    align-content: center;
+}
+.loader {
+    width: 75px;
+    height: 75px;
+    animation: spin 2s linear infinite;
+}
+.left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    height: 100vh;
+}
+.all {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+.right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    height: 100vh;
+}
+@keyframes spin {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
+@keyframes scroll {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 150vw;
+    }
+}
