@@ -30,9 +30,61 @@ app.get('/api/v1/dashboard/dashboard_cards', async (req, res) => {
         res.status(500).send(error)
     }
 }); 
+app.get('/api/v1/courses/:id', async (req, res) => {
+    try {
+        if (env.MODE != 'dev') {res.status(401).send('401 Unauthorized'); return;}
+        res.send(await getClassInfo(req.params.id))
+    } catch (error) {
+        res.status(500).send(error)
+    }
+})
+app.get('/api/v1/planner/items/:id', async (req, res) => {
+    try {
+        if (env.MODE != 'dev') {res.status(401).send('401 Unauthorized'); return;}
+        res.send(await getPlanner(req.params.id))
+    } catch (error) {
+        res.status(500).send(error)
+    }
+})
 app.get('/api/mode', (req, res) => {
     res.send({"mode":env.MODE})
 });
+
+async function getPlanner(code) {
+    const myHeaders = new Headers()
+    myHeaders.append("Authorization", "Bearer " + env.DEVAPIKEY)
+    const requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow"
+    };
+    try {
+    const response = await fetch(`https://${env.DEVBASEURL}/api/v1/planner/items?context_codes[]=course_${code}`, requestOptions)
+    const data = response.json()
+    return data;
+    } catch (error) {
+        return;
+    }
+}
+async function getClassInfo(id) {
+    const myHeaders = new Headers()
+    myHeaders.append("Authorization", "Bearer " + env.DEVAPIKEY)
+    const requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow"
+    };
+    try {
+    const response = await fetch(`https://${env.DEVBASEURL}/api/v1/courses/${id}?include[]=total_scores`, requestOptions)
+    const data = response.json()
+    return data;
+    } catch (error) {
+        return;
+    }
+}
+
+
+
 async function GetDashCards() {
     const myHeaders = new Headers()
     myHeaders.append("Authorization", "Bearer " + env.DEVAPIKEY);

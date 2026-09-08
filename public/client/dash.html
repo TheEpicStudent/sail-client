@@ -8,7 +8,7 @@
     </head>
     <body>
         <div class="all">
-            <div class="left">
+            <div class="left" id="left">
                 <div class="courses" id="courses">
                     <h1 style="width: 100%; text-align: center;">Courses</h1>
                     <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75" fill="none" class="loader" id="loader">
@@ -16,17 +16,53 @@
                     </svg>
                 </div>
             </div>
-            <div class="right">
-                <div class="courseinfo">
-                    <h1 style="width: 100%; text-align: center;">ClassName</h1>
+            <div class="right" id="right">
+                <div class="courseinfo" id="courseinfo">
+                    <h1 style="width: 100%; text-align: center;" id="classname">ClassName</h1>
+                    <h2 style="width: 100%; text-align: center; margin-top: 0;" id="fullname">full name must be super long</h2>
                     <div class="courseinfo__card">
-                        <h2>null%</h2>
+                        <h2 id="percent">null%</h2>
                         <p>Current Grade</p>
                     </div>
                     <hr>
                     <div class="courseinfo__card">
-                        <h2></h2>
-
+                        <h2 id="missingNum">2</h2>
+                        <p id="missingTxt">Assignments Missing</p>
+                    </div>
+                    <div style="margin-top: 10px; width: 80%;"></div>
+                    <br>
+                    <div style="margin-top: 10px; width: 80%;"></div>
+                    <div>
+                        <div class="courseinfo__notif">
+                            <div class="courseinfo__row">
+                            <p><b id="notif1title">Feedback recieved</b></p>
+                            <p id="notif1p">name of assignment</p>
+                            </div>
+                            <sup id="notif1sup">10/10</sup>
+                        </div>
+                        <div class="courseinfo__notif">
+                            <div class="courseinfo__row">
+                            <p><b id="notif2title">New Announcement</b></p>
+                            <p id="notif2p">Announcement title</p>
+                            </div>
+                            <sup id="notif2sup">Click to open</sup>
+                        </div>
+                        <div style="margin-top: 15px; width: 80%;"></div>
+                        <hr>
+                        <div style="margin-top: 15px; width: 80%;"></div>
+                        <div class="courseinfo__buttons">
+                            <div>
+                            <button style="width: 100%; height: 69px;">Home</button>
+                            </div>
+                            <div class="courseinfo__buttonrow">
+                            <button>Announcements</button>
+                            <button>Grades</button>
+                            </div>
+                            <div class="courseinfo__buttonrow">
+                            <button>Modules</button>
+                            <button>Assignments</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
